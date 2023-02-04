@@ -63,6 +63,9 @@ npm install
 
 # Rode a aplicação app
 yarn start
+
+# Intalar dependências
+npm install
 ```
 
 <br>

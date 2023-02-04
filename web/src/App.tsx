@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { ThemeProvider } from "styled-components";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+  const theme = {
+    primary: "#322153",
+    secondary: "#6C63FF",
+    background: "#F0F0F5",
+    backgrousecondary: "#343074",
+    text: "#6C6C80",
+    white: "#FFF",
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<p>Renderizando a home </p>} />
+          <Route path="/new" element={<p>Renderizando a new</p>} />
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
